@@ -41,6 +41,7 @@ const createElement = (tech) => {
 
 
 
+//fetch data
 let data;
 
 const result = async () => {
@@ -56,19 +57,18 @@ result()
 
 
 
-
+//Search tech
 input.addEventListener("input", (e)=>{
     const value = e.target.value;
-    // console.log(e.target.value)
 
     const filtered = data.find(item => item.tech.toLowerCase().includes(value)  )
-    // console.log(filtered)
-
 
     if(value){
         stacks.innerHTML = ''
         createElement(filtered)
-    } else{
+    } 
+    
+    else{
         stacks.innerHTML = ''
         data?.map(tech => {
             createElement(tech)
@@ -78,7 +78,7 @@ input.addEventListener("input", (e)=>{
 
 
 
-
+//Toggling description
 btn.addEventListener("click", ()=>{
     const toggleDescription = document.querySelectorAll(".desc");
 
